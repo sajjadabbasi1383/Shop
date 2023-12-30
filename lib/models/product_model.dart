@@ -36,7 +36,7 @@ class ProductModel{
     stock=element["stock"].toString()??'';
     brand=element["brand"]??'';
     category=element["category"]??'';
-    image=element["images"][0];
+    image=element["thumbnail"];
   }
 
 }

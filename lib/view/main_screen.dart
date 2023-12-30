@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shop/view/profile_screen.dart';
 
 import 'home_screen.dart';
-import 'profile_screen.dart';
 
 class MainScreen extends StatelessWidget {
   final RxInt selectedPageIndex = 0.obs;

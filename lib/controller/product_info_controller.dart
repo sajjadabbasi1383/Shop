@@ -4,12 +4,12 @@ import 'package:shop/models/product_model.dart';
 import '../services/dio_service.dart';
 
 
-class SingleArticleController extends GetxController{
+class ProductInfoController extends GetxController{
   RxBool loading=false.obs;
   RxInt id=RxInt(0);
   Rx<ProductModel> productInfoModel=ProductModel().obs;
 
-  getArticleInfo() async {
+  getProductInfo() async {
     productInfoModel=ProductModel().obs;
     loading.value=true;
     var response = await DioService().getMethod('https://dummyjson.com/products/$id');
