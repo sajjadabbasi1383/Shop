@@ -14,16 +14,16 @@ class ProductModel{
 
   ProductModel({
 
-    required this.id,
-    required this.title,
-    required this.description,
-    required this.price,
-    required this.discountPercentage,
-    required this.rating,
-    required this.stock,
-    required this.brand,
-    required this.category,
-    required this.image,
+     this.id,
+     this.title,
+     this.description,
+     this.price,
+     this.discountPercentage,
+     this.rating,
+     this.stock,
+     this.brand,
+     this.category,
+     this.image,
   });
 
   ProductModel.fromJson(Map<String,dynamic> element){
