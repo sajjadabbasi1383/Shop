@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shop/view/main.dart';
+import 'package:shop/main.dart';
 
 
 void main() {

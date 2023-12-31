@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:shop/view/profile_screen.dart';
+import 'package:shop/view/register_screen.dart';
 
+import 'SearchPage.dart';
 import 'home_screen.dart';
 
 class MainScreen extends StatelessWidget {
@@ -20,7 +23,9 @@ class MainScreen extends StatelessWidget {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              const Icon(Icons.search, color: Colors.black),
+              GestureDetector(
+                  onTap: () => Get.to(const SearchPage()),
+                  child: const Icon(Icons.search, color: Colors.black)),
               const Text(
                 "Online Shop",
                 style: TextStyle(fontFamily: "dana", fontSize: 21,color: Colors.black,fontWeight: FontWeight.bold),
@@ -45,7 +50,7 @@ class MainScreen extends StatelessWidget {
                 index: selectedPageIndex.value,
                 children:  [
                   HomeScreen(),
-                  const ProfileScreen(),
+                  ProfileScreen(),
                 ],
               ),
             )),
@@ -114,7 +119,13 @@ class BottomNavBar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   IconButton(
-                      onPressed: () => changeScreen(1),
+                        onPressed: (){
+                          if (GetStorage().read('username') == null) {
+                            Get.to(RegisterScreen());
+                          } else {
+                            changeScreen(1);
+                          }
+                      },
                       icon: const ImageIcon(AssetImage("assets/icons/user.png"),
                           color: Colors.white)),
                   IconButton(
