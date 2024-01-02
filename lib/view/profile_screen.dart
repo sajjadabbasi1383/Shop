@@ -91,24 +91,6 @@ class ProfileScreen extends StatelessWidget {
               child: SizedBox(
                 height: 45,
                 width: Get.size.width / 1.17,
-                child: const Center(
-                    child: Text(
-                  "Cart",
-                )),
-              ),
-            ),
-            Divider(
-              color: const Color.fromARGB(255, 112, 112, 112),
-              indent: Get.size.width / 7,
-              endIndent: Get.size.width / 7,
-              thickness: 1.2,
-            ),
-            InkWell(
-              onTap: () {},
-              splashColor: Colors.indigo,
-              child: SizedBox(
-                height: 45,
-                width: Get.size.width / 1.17,
                 child: const Center(child: Text("My Favorite Product")),
               ),
             ),

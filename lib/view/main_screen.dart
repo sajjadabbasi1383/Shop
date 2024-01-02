@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:shop/view/cart_screen.dart';
 import 'package:shop/view/profile_screen.dart';
 import 'package:shop/view/register_screen.dart';
 
-import 'SearchPage.dart';
+import 'search_screen.dart';
 import 'home_screen.dart';
 
 class MainScreen extends StatelessWidget {
@@ -50,6 +51,7 @@ class MainScreen extends StatelessWidget {
                 index: selectedPageIndex.value,
                 children:  [
                   HomeScreen(),
+                  CartScreen(),
                   ProfileScreen(),
                 ],
               ),
@@ -123,11 +125,17 @@ class BottomNavBar extends StatelessWidget {
                           if (GetStorage().read('username') == null) {
                             Get.to(RegisterScreen());
                           } else {
-                            changeScreen(1);
+                            changeScreen(2);
                           }
                       },
                       icon: const ImageIcon(AssetImage("assets/icons/user.png"),
                           color: Colors.white)),
+                  IconButton(
+                      onPressed: () => changeScreen(1),
+                      icon: const Icon(
+                        Icons.shopping_cart,
+                        color: Colors.white,
+                      )),
                   IconButton(
                       onPressed: () => changeScreen(0),
                       icon: const ImageIcon(
