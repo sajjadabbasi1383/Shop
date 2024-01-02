@@ -2,6 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
+import 'package:shop/models/product_model.dart';
+import 'package:shop/view/cart_screen.dart';
 
 import '../controller/home_controller.dart';
 import '../controller/product_info_controller.dart';
@@ -282,17 +284,23 @@ class _ProductInfoScreenState extends State<ProductInfoScreen> {
                         ],
                       ),
                     ),
-                    Container(
-                      width: 88,
-                      height: 88,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.black,
-                      ),
-                      child: const Icon(
-                        Icons.arrow_forward_ios_outlined,
-                        color: Colors.white,
-                        size: 40,
+                    GestureDetector(
+                      onTap: () {
+                        productInfoController.addProductToBasket(productInfoController.productInfoModel.value);
+                        Get.back();
+                      },
+                      child: Container(
+                        width: 88,
+                        height: 88,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.black,
+                        ),
+                        child: const Icon(
+                          Icons.arrow_forward_ios_outlined,
+                          color: Colors.white,
+                          size: 40,
+                        ),
                       ),
                     ),
                   ],
